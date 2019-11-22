@@ -14,12 +14,12 @@ const EditTodo: React.FC<Props> = ({ text, save, loading }) => {
     }, [text])
 
     return (
-        <div className="todo-item">
+        <>
             <input className='input' type='text' value={content} onChange={e => setContent(e.target.value)} />
             <button className='todo-button' onClick={() => save(content)} disabled={loading}>
                 Save
             </button>
-        </div>
+        </>
     );
 }
 

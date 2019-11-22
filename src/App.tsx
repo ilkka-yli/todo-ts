@@ -102,7 +102,9 @@ const App: React.FC = () => {
             save={updateTodoText}
             editMode={editing === i} 
             loading={loading} />)}
-          <EditTodo text={ref.current} save={text => addNewTodo(text)} loading={loading} />
+          <div className="todo-item">
+            <EditTodo text={ref.current} save={text => addNewTodo(text)} loading={loading} />
+          </div>
       </div>
       {loading && <div className="status-text"><FontAwesomeIcon icon={faSpinner} pulse className="status-text" size="2x" /></div>}
       {error && <p className="status-text">{error}</p>}
