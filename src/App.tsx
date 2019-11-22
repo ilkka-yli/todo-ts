@@ -4,6 +4,8 @@ import Todo from './presentational/Todo';
 import { TodoModel } from './Model/Todo';
 import { fetchTodos, deleteTodo, updateTodo, addTodo } from './Actions/todo_actions';
 import EditTodo from './presentational/EditTodo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<TodoModel[]>([]);
@@ -87,21 +89,23 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="container">
-      {todos.map((todo, i) =>
-        <Todo
-          key={i}
-          todo={todo}
-          index={i}
-          setEditing={setEditing}
-          complete={completeTodo}
-          remove={removeTodo}
-          save={updateTodoText}
-          editMode={editing === i} 
-          loading={loading} />)}
-      <EditTodo text={ref.current} save={text => addNewTodo(text)} loading={loading} />
-      {loading && <p>Loading...</p>}
-      {error && <p className="error">{error}</p>}
+    <div className="app">
+      <div className="todo-list">
+        {todos.map((todo, i) =>
+          <Todo
+            key={i}
+            todo={todo}
+            index={i}
+            setEditing={setEditing}
+            complete={completeTodo}
+            remove={removeTodo}
+            save={updateTodoText}
+            editMode={editing === i} 
+            loading={loading} />)}
+          <EditTodo text={ref.current} save={text => addNewTodo(text)} loading={loading} />
+      </div>
+      {loading && <div className="status-text"><FontAwesomeIcon icon={faSpinner} pulse className="status-text" size="2x" /></div>}
+      {error && <p className="status-text">{error}</p>}
     </div>
   );
 }

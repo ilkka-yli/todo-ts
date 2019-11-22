@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
     completed: boolean;
@@ -19,7 +21,7 @@ const ViewTodo: React.FC<Props> = ({ completed, text, setEditing, complete, remo
                 {completed ? 'Not completed' : 'Complete'}
             </button>
             <button className='todo-button' onClick={() => remove()} disabled={loading}>
-                X
+                <FontAwesomeIcon icon={faTrash} />
             </button>
         </>
     );

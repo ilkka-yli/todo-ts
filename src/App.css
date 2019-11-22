@@ -1,35 +1,56 @@
-.container {
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-  border: thin solid #999999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.app {
+  background: linear-gradient(150deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  padding: 30px;
+  height: 100vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.todo-list {
+  max-width: 400px;
+  margin: 20px auto;
 }
 
 .todo-item {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  border-radius: 3px;
   display: flex;
-  flex-direction: row;
-  margin-top: 10px;
+  align-items: center;
 }
 
-.todo-item:first-of-type {
-  margin-top: 0;
+.input {
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
 .todo-text {
   cursor: pointer;
+  width: 100%;
 }
 
 .todo-button {
   margin-left: 10px;
+  border-radius: 3px;
+  border: 0;
+  padding: 6px 10px;
+  background: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #333;
 }
 
 .line-through {
   text-decoration: line-through;
 }
 
-.error {
-  color: red;
+.status-text {
+  text-align: center;
+  color: white;
 }
