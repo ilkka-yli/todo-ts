@@ -97,8 +97,9 @@ const App: React.FC = () => {
           complete={completeTodo}
           remove={removeTodo}
           save={updateTodoText}
-          editMode={editing === i} />)}
-      <EditTodo text={ref.current} save={text => addNewTodo(text)} />
+          editMode={editing === i} 
+          loading={loading} />)}
+      <EditTodo text={ref.current} save={text => addNewTodo(text)} loading={loading} />
       {loading && <p>Loading...</p>}
       {error && <p className="error">{error}</p>}
     </div>
